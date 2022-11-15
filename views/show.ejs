@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')%>
+    <title>Wishlist Item</title>
+</head>
+<body>
+    <nav>
+        <a href="/items"><h1 class = "logo">My Birthday Wishlist</h1></a>
+        <div class = 'menu'>
+            <a href="/items">List</a>
+        
+        </div>
+    </nav>
+    <main class = 'box'>
+        <div class = "info">
+            <% item.forEach(item =>{ %>
+        <img src=<%=item.img%>>
+                <h1><%=item.item%></h1>
+                <p>$<%=item.price%></p>
+                <p><%=item.color%></p>
+                <p ><%=item.size%>"</p>
+                <p><%=item.location%></p>
+                <form action="/items<%= item._id%>?_method=PUT" method="POST">
+              <a class = 'button' href="<%=item.link%>">Buy from HERE</a>
+              </form>
+              <% }) %>
+            </div>
+    </main>
+</body>
+</html>

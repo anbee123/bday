@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<style>
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 3%;
+        
+    }
+    h4 {
+        color: rgb(59, 54, 54);
+    }
+    
+</style>
+<body>
+
+    <header class = 'header'>
+
+        <div>
+          <a href="/items"><h1 class = 'logo'>My Birthday Wish-list</h1></a>
+         
+          <%- include('./partials/bubble.ejs')%>
+        </div>
+         
+        <p class = 'animate' id = "intro-message">Dear my favorite COUSINS,<br> Thanks for taking a peek at my wishlist.  A lot of you tell me how difficut it is to buy me a gift.  This is certainly not because I am a picky or selective person, but mostly due to your unconditional love and desire to see me happy! Thank you again.  This list is just to give ideas of the objects and experiences I like (the only brand that I trust to get snowboard stuffs LOL, maybe Montec but it's more expensive), so please,  NO PRESSURE! </p>
+  
+        
+      </header>
+      <main class = "col-container">
+          
+          <ul class = 'col-1'>
+              
+              <% for(let i = 0; i < item.length; i = i + 4){ %>
+                  <li>
+            <img class = "index-img" src= '<%=item[i].img; %>' >
+                    <h3><%=item[i].item%></h3>
+                    <h4>Price: $<%=item[i].price%></h4>
+                    <h4>Size: <%=item[i].size%></h4>
+                    <h4>Color: <%=item[i].color%></h4>
+                    <h4>Store: <%=item[i].location%></h4> </br>
+                    <a class = 'button' href="https://www.dopesnow.com/blizzard-w-full-zip-snowboard-jacket-women-soft-green">Buy from HERE</a>
+                </li>
+                  <% } %>
+              </ul>
+          <ul class = 'col-1'> 
+              <% for(let i = 1; i < item.length; i = i + 4){ %>
+                  <li>
+                <img class = "index-img" src= '<%=item[i].img; %>'>
+                      <h3><%=item[i].item%></h3>
+                      <h4>Price: $<%=item[i].price%></h4>
+                      <h4>Size: <%=item[i].size%></h4>
+                      <h4>Color: <%=item[i].color%></h4>
+                      <h4>Store: <%=item[i].location%></h4> </br>
+                      <a class = 'button' href="https://www.dopesnow.com/notorious-b-i-b-w-snowboard-pants-women-soft-green">Buy from HERE</a>
+
+                    </li>
+                  <% } %>
+          </ul>
+          <ul class = 'col-1'>
+              <% for(let i = 2; i < item.length; i = i + 4){ %>
+                  <li>
+  <img class = "index-img" src= '<%=item[i].img; %>'>
+                      <h3><%=item[i].item%></h3>
+                      <h4>Price: $<%=item[i].price%></h4>
+                      <h4>Size: <%=item[i].size%></h4>
+                      <h4>Color: <%=item[i].color%></h4>
+                      <h4>Store: <%=item[i].location%></h4>  </br>
+                      <a class = 'button' href="https://www.ulta.com/p/clean-it-zero-3-in-1-cleansing-balm-pimprod2009043?sku=2555801&cmpid=PS_Non!google!Product_Listing_Ads&cagpspn=pla&CATCI=pla-992208215199&CAAGID=107718646076&CAWELAID=330000200001849811&CATARGETID=330000200002593209&CADevice=c&gclid=CjwKCAiA68ebBhB-EiwALVC-NswD4iIFr3b9pFX5kj8HgHdBKf1g3FOp6OIL4tLpz1StamAj_XqYthoCRQUQAvD_BwE">Buy from HERE</a>
+                  </li>
+                  <% } %>
+          </ul>
+
+          <ul class = 'col-1'>
+            <% for(let i = 3; i < item.length; i = i + 4){ %>
+                <li>
+                   <img class = "index-img" src= '<%=item[i].img; %>'>
+                    <h3><%=item[i].item%></h3>
+                    <h4>Price: $<%=item[i].price%></h4>
+        
+                    <h4>Size: <%=item[i].size%></h4>
+                    <h4>Color: <%=item[i].color%></h4>
+                    <h4>Store: <%=item[i].location%></h4> </br>
+                    <a class = 'button' href="https://www.burton.com/us/en/p/womens-burton-profile-glove/W22-10362101101M.html?g_type=discovery&g_acctid=208-000-6041&g_campaign=US%20-%20SG%20-%20Shopping%20-%20Accessories%20(ROAS)&g_campaignid=11533451252&g_adgroupid=111950805309&g_adid=476734705918&g_keyword=&g_keywordid=pla-847976512500&g_adtype=pla&g_merchantid=366744&g_productchannel=online&g_productid=W22-10362101101M&g_partition=847976512500&g_network=g&g_ifproduct=product&g_ifcreative=&gclid=CjwKCAiA68ebBhB-EiwALVC-NkoYKimI-kM7ZeQrCemmQIbLx928dn1AYPORZAJT3JIlvVwzpLrHRhoCALgQAvD_BwE">Buy from HERE</a>
+                </li>
+                <% } %>
+        </ul>
+    
+</body>
+</html>
